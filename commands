@@ -1,0 +1,41 @@
+# setup helm with our cluster
+$ helm init 
+
+# sync all helm charts info.
+$ helm repo update 
+
+# By default helm uses stable repo, we can see which repos are available using list.
+$ helm repo list 
+
+# show you a list of all deployed releases.
+$ helm list 
+
+-----------------------------------------------
+
+# add bitnami repo as a chart repository:
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+
+# Get Apache chart:
+$ helm install --name my-release bitnami/apache
+
+# Get our server IP address using:
+$ minikube service my-release-apache --url
+
+# Clean up
+$ helm delete my-release
+
+-----------------------------------------------
+# Create a chart
+$ helm create mychart
+
+# dry run
+$ helm install --dry-run --debug mychart
+
+# package a chart
+$ helm package mychart
+
+# Upgrade a chart
+$ helm upgrade --install mychart mychart-0.1.0.tgz --set replicaCount=3
+
+
+
