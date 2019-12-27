@@ -1,5 +1,5 @@
-# setup helm with our cluster
-$ helm init 
+# add “stable” repository
+$ helm repo add stable https://kubernetes-charts.storage.googleapis.com/ 
 
 # sync all helm charts info.
 $ helm repo update 
@@ -16,7 +16,7 @@ $ helm list
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 
 # Get Apache chart:
-$ helm install --name my-release bitnami/apache
+$ helm install my-release bitnami/apache
 
 # Get our server IP address using:
 $ minikube service my-release-apache --url
