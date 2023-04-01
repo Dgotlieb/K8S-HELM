@@ -1,9 +1,0 @@
-replicaCount: 3
-
-image:
-  repository: dgotlieb/pyrandom:1.0
-  pullPolicy: Always
-  tag: ""
-  
-service:
-    type: LoadBalancer
